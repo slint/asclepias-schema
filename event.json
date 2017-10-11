@@ -1,127 +1,49 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "http://future-schema-url",
-    "title": "Schema for the object relation payload.",
-    "description": "Schema of the payload, describing the relations between objects.",
-    "definitions": {
-        "identifier": {
-            "type": "object",
-            "additionalProperties": false,
-            "description": "General structure of the persistent identifiers.",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "E.g.: 10.5281/zenodo.123"
-                },
-                "id_schema": {
-                    "type": "string",
-                    "description": "E.g.: DOI"
-                },
-                "id_url": {
-                    "type": "string",
-                    "description": "E.g.: http://doi.org"
-                }
-            },
-            "required": [
-                "id",
-                "id_schema"
-            ]
-        },
-        "object_type": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "sub_type": {
-                    "type": "string"
-                },
-                "sub_type_schema": {
-                    "type": "string"
-                }
-            }
-        },
-        "publisher": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "$ref": "#/definitions/identifier"
-                }
-            }
-        },
-        "provider": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "$ref": "#/definitions/identifier"
-                }
-            }
-        },
-        "relationship": {
-            "properties": {
-                "scholix_relationship": {
-                    "type": "string",
-                    "description": "Currently-supported Scholix relations.",
-                    "enum": ["isReferencedBy", "References", "IsSupplementTo", "isSupplementedBy", "IsRelatedTo"]
-                },
-                "original_relationship_name": {
-                    "type": "string",
-                    "description": "All other relationship names. TODO: Should we support all DataCite relations?",
-                    "enum": ["IsCitedBy", "Cites", "IsIdenticalTo", "IsNextVersionOf", "IsPreviousVersionOf"]
-                },
-                "original_relationship_schema": {
-                    "type": "string",
-                    "description": "Example: DataCite."
-                }
-            }
-        },
-        "object": {
-            "properties": {
-                "identifier": {
-                    "$ref": "#definitions/identifier"
-                },
-                "type": {
-                    "$ref": "#definitions/object_type"
-                },
-                "publisher": {
-                    "$ref": "#definitions/publisher"
-                },
-                "publication_date": {
-                    "type": "string",
-                    "description": "dc:date qualifier 'issued'"
-                }
-            }
-        }
-    },
+    "id": "https://asclepias.org/schema/event-v1.0.json",
+    "title": "Event message schema.",
+    "description": "Schema of the event message.",
+    "additionalProperties": false,
     "type": "object",
     "properties": {
-        "link_publication_date": {
-            "type": "string"
-        },
-        "link_provider": {
-            "name": {
-                "type": "string",
-                "description": "Party that is providing the link."
-            },
-            "identifier": {
-                "$ref": "#definitions/identifier"
-            }
-        },
-        "relationship_type": {
-            "$ref": "#definitions/relationship"
-        },
-        "license_url": {
+        "event_type": {
             "type": "string",
-            "description": "URL to a license of the link (recommended CC0)"
+            "description": "Type of the event. Controlled vocabulary: 'relation_created' or 'relation_deleted'",
+            "enum": ["relation_created", "relation_deleted"]
+
+        },
+        "creator": {
+            "type": "string",
+            "description": "High-level name of the part which emmited this event."
         },
         "source": {
-            "$ref": "#definitions/object"
+            "type": "string",
+            "description": "Name of the source, algorithm or procedure, which created this event."
         },
-        "target": {
-            "$ref": "#definitions/object"
+        "payload": {
+            "type": "array",
+            "description": "Payload information specific to the event_type. An array, containing one or more payloads of the structure matching with the event_type.",
+            "items": {
+                "anyOf": [
+                    "$ref": "https://asclepias.org/schema/relation-v1.0.json"
+                ]
+            }
+        },
+        "id": {
+            "type": "string",
+            "description": "Globally unique identifier of the event (UUID version 4 as specified in RFC 4122)."
+        },
+        "time": {
+            "type": "string",
+            "description": "Time when the payload information was created."
         }
-    }
+    },
+    "required": [
+      "event_type",
+      "creator",
+      "source",
+      "payload",
+      "id",
+      "time"
+    ]
 }
