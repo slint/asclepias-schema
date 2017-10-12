@@ -1,4 +1,7 @@
-*** Event: ADS discovers that a journal article cites a Zenodo (software) record (not yet in the ADS database)
+
+The ADS events are illustrated in the file ADS_events.png
+
+## Event: ADS discovers that a journal article cites a Zenodo (software) record (not yet in the ADS database)
 
 Little bit of background: the ADS reference resolving process stores data in a file of all citations where a publication in the ADS Universe has a reference string in its bibliography with one of a set of identifiers (doi:, ascl:, Github or Bitbucket URLs). In the ADS back-office, a pipeline ingests this data and tries to determine whether the object corresponding with the identifier represents software; currently this means that metadata is harvested for a DOI and it is checked whether the resource type is "software". If the pipeline determines that the DOI found corresponds with a software object, it constructs a payload that will be sent to the ADS webhook service, which will then send the following JSON data to all callback URLs that subscribed to the event `relation_created`:
 ```
@@ -37,7 +40,7 @@ Little bit of background: the ADS reference resolving process stores data in a f
 }
 ```
 
-*** Event: The Zenodo (software) record is added to the ADS index
+## Event: The Zenodo (software) record is added to the ADS index
 
 The metadata harvested for the Zenodo (software) record in the ADS back-office pipeline is submitted to the indexing process. As a result, a bibcode is minted for this Zenodo record. The pipeline (which is different from the one above) prepares a payload and submits this to the webhook service, which then sends out the following `relation_created`to all callback URLs that subscribed to this event type:
 ```
