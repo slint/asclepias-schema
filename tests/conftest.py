@@ -2,7 +2,6 @@ import pytest
 import os
 import json
 
-
 #
 # JSON schema and test data loading fixtures
 #
@@ -19,6 +18,12 @@ def data_dir(test_dir):
 @pytest.fixture
 def jsonschema_dir(test_dir):
     return os.path.join(test_dir, '..', 'jsonschema')
+
+
+@pytest.fixture
+def zenodo_examples_data_dir(request):
+    """Return the directory of the currently running test script"""
+    return request.fspath.join('../../examples/zenodo-v1/data')
 
 
 def load_schema(basedir, filename):
@@ -198,3 +203,6 @@ def zenodo_object_events():
         },
     ]
     return data
+
+
+
