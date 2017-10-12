@@ -8,6 +8,7 @@
 
 Schema of the payload, describing the relations between objects.
 
+
 **Properties**
 
 |   |Type|Description|Required|
