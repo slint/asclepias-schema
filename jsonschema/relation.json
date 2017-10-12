@@ -11,13 +11,7 @@
             "description": "Date of the relation publishing."
         },
         "relation_provider": {
-            "name": {
-                "type": "string",
-                "description": "Party that is providing the information on the relation."
-            },
-            "identifier": {
-                "$ref": "definitions.json#definitions/identifier"
-            }
+            "$ref": "definitions.json#definitions/organization"
         },
         "relationship_type": {
             "$ref": "definitions.json#definitions/relationship"

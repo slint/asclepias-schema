@@ -40,26 +40,6 @@
                 }
             }
         },
-        "publisher": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "$ref": "#/definitions/identifier"
-                }
-            }
-        },
-        "provider": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "$ref": "#/definitions/identifier"
-                }
-            }
-        },
         "relationship": {
             "properties": {
                 "scholix_relationship": {
@@ -89,11 +69,22 @@
                     "$ref": "#definitions/object_type"
                 },
                 "publisher": {
-                    "$ref": "#definitions/publisher"
+                    "$ref": "#definitions/organization"
                 },
                 "publication_date": {
                     "type": "string",
                     "description": "Object (PID) first publication date. Type dc:date."
+                }
+            }
+        },
+        "organization": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name of the organization, which can be an event payload information provider, object publisher etc."
+                },
+                "identifier": {
+                    "$ref": "#definitions/identifier"
                 }
             }
         }

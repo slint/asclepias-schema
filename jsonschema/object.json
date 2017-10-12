@@ -11,13 +11,7 @@
             "description": "Date when the information on this object was first published."
         },
         "object_provider": {
-            "name": {
-                "type": "string",
-                "description": "Party that is providing the information on the object."
-            },
-            "identifier": {
-                "$ref": "definitions.json#definitions/identifier"
-            }
+            "$ref": "definitions.json#definitions/organization"
         },
         "object": {
             "$ref": "definitions.json#definitions/object"

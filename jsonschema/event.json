@@ -14,7 +14,7 @@
         },
         "creator": {
             "type": "string",
-            "description": "High-level name of the part which emmited this event."
+            "description": "Name of the part which emmited this event."
         },
         "source": {
             "type": "string",
