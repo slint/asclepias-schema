@@ -5,13 +5,14 @@
     "description": "Schema of the payload, describing the relations between two objects.",
     "type": "object",
     "properties": {
-        "link_publication_date": {
-            "type": "string"
+        "relation_publication_date": {
+            "type": "string",
+            "description": "Date of the relation publishing."
         },
-        "link_provider": {
+        "relation_provider": {
             "name": {
                 "type": "string",
-                "description": "Party that is providing the link."
+                "description": "Party that is providing the information on the relation."
             },
             "identifier": {
                 "$ref": "definitions.json#definitions/identifier"
@@ -22,7 +23,7 @@
         },
         "license_url": {
             "type": "string",
-            "description": "URL to a license of the link (recommended CC0)"
+            "description": "URL to a license of the relation (recommended CC0)"
         },
         "source": {
             "$ref": "definitions.json#definitions/object"
