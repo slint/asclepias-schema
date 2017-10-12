@@ -69,12 +69,14 @@
                 },
                 "original_relationship_name": {
                     "type": "string",
-                    "description": "All other relationship names.",
-                    "enum": ["IsCitedBy", "Cites", "IsIdenticalTo", "IsNextVersionOf", "IsPreviousVersionOf"]
+                    "description": "All other relationship names. Supporting all metadata types of DataCite Metadata Schema 4.1",
+                    "enum": ["IsCitedBy", "Cites", "IsSupplementTo", "IsSupplementedBy", "IsContinuedBy", "Continues", "HasMetadata", "IsMetadataFor", "IsNewVersionOf", "IsPreviousVersionOf", "IsPartOf", "HasPart", "IsReferencedBy", "References", "IsDocumentedBy", "Documents", "IsCompiledBy", "Compiles", "IsVariantFormOf", "IsOriginalFormOf", "IsIdenticalTo", "IsReviewedBy", "Reviews", "IsDerivedFrom", "IsSourceOf", "IsDescribedBy", "Describes", "HasVersion", "IsVersionOf", "IsRequiredBy", "Requires"]
+
                 },
                 "original_relationship_schema": {
                     "type": "string",
-                    "description": "Example: DataCite."
+                    "description": "Schema of the relation type. Currently DataCite only.",
+                    "enum": ["DataCite"]
                 }
             }
         },
@@ -91,7 +93,7 @@
                 },
                 "publication_date": {
                     "type": "string",
-                    "description": "dc:date qualifier 'issued'"
+                    "description": "Object (PID) first publication date. Type dc:date."
                 }
             }
         }
