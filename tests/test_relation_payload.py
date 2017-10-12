@@ -1,7 +1,9 @@
+"""Test relation payloads against the JSONSchema."""
 from jsonschema import validate
 
 
-def test_simple_relation_payload(minimal_relation_payload, relation_schema):
+def test_simple_relation_payload(ads_relation_payloads, relation_schema):
     """Test simple relation payload JSONSchema validation."""
     # Will rase in case of schema validation errors
-    validate(minimal_relation_payload, relation_schema)
+    for data in ads_relation_payloads:
+        validate(data, relation_schema)
