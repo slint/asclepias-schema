@@ -41,6 +41,7 @@
             }
         },
         "relationship": {
+            "type": "object",
             "properties": {
                 "scholix_relationship": {
                     "type": "string",
