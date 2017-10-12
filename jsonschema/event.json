@@ -24,7 +24,7 @@
             "type": "array",
             "description": "Payload information specific to the event_type. An array, containing one or more payloads of the structure matching with the event_type.",
             "items": {
-                "anyOf": [
+                "oneOf": [
                     {
                         "$ref": "relation.json"
                     },
