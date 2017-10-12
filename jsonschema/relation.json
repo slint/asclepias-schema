@@ -4,6 +4,7 @@
     "title": "Object relation payload schema.",
     "description": "Schema of the payload, describing the relations between two objects.",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
         "relation_publication_date": {
             "type": "string",
@@ -31,5 +32,10 @@
         "target": {
             "$ref": "definitions.json#definitions/object"
         }
-    }
+    },
+    "required": [
+        "license_url",
+        "source",
+        "target"
+    ]
 }

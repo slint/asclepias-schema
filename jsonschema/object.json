@@ -4,6 +4,7 @@
     "title": "Object payload schema.",
     "description": "Schema of the payload, describing the object events.",
     "type": "object",
+    "additionalProperties": false,
     "properties": {
         "object_publication_date": {
             "type": "string",
