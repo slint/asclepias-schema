@@ -33,6 +33,11 @@ def relation_schema(jsonschema_dir):
 
 
 @pytest.fixture
+def object_schema(jsonschema_dir):
+    return load_schema(jsonschema_dir, 'object.json')
+
+
+@pytest.fixture
 def event_schema(jsonschema_dir):
     return load_schema(jsonschema_dir, 'event.json')
 
@@ -83,7 +88,7 @@ def ads_relation_payloads():
 
 
 @pytest.fixture()
-def ads_example_events():
+def ads_relation_events():
     # Two events that are described in ADS-mock-events.md
     data = [
         {

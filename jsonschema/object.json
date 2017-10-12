@@ -17,14 +17,14 @@
             "identifier": {
                 "$ref": "definitions.json#definitions/identifier"
             }
-        }
+        },
         "object": {
             "$ref": "definitions.json#definitions/object"
-        }
+        },
         "metadata": {
             "type": "object",
             "description": "Metadata that is associated with this object"
-        }
+        },
         "metadata_schema": {
             "type": "string",
             "description": "Example: DataCite, Zenodo"
