@@ -1,5 +1,5 @@
 
-The ADS events are illustrated in the file ADS_events.png
+The ADS events are illustrated in a diagram at the bottom of this document
 
 ## Event: ADS discovers that a journal article cites a Zenodo (software) record (not yet in the ADS database)
 
@@ -81,3 +81,5 @@ The metadata harvested for the Zenodo (software) record in the ADS back-office p
 *** Event: ADS discovers that a journal article cites a Zenodo (software) record (already in the ADS database)
 
 This will result in the emission of a `relation_added` event just like the one earlier.
+
+![Image of ADS events](https://github.com/asclepias/event-model/blob/master/ADS_events.png)
