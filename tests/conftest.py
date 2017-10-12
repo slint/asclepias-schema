@@ -100,7 +100,7 @@ def ads_example_events():
                 }
               },
               "relationship_type": {
-                "scholix_relationship": "references",
+                "scholix_relationship": "References",
                 "original_relationship_name": "Cites",
                 "original_relationship_schema": "DataCite"
               },
@@ -114,7 +114,8 @@ def ads_example_events():
                   "id_schema": "DOI"
                 }
               },
-              "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+              "license_url": "https://creativecommons.org/"
+                             "publicdomain/zero/1.0/"
             }
           ],
           "source": "ADS.Discovery",
@@ -148,7 +149,8 @@ def ads_example_events():
                   "id_schema": "DOI"
                 }
               },
-              "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+              "license_url": "https://creativecommons.org/"
+                             "publicdomain/zero/1.0/"
             }
           ],
           "source": "ADS.Discovery",
@@ -169,31 +171,34 @@ def minimal_relation_event():
         "source": "ADS.Discovery",
         "time": "1441166640.359496",
         "event_type": "relation_created",
-        "payload": [{
-            "relationship_type": {
-                "original_relationship_schema": "DataCite",
-                "original_relationship_name": "Cites",
-                "scholix_relationship": "References"
-            },
-            "target": {
-                "identifier": {
-                    "id": "10.5281/zenodo.11020",
-                    "id_schema": "DOI",
-                    "Id_url": "https://doi.org"
+        "payload": [
+            {
+                "relationship_type": {
+                    "original_relationship_schema": "DataCite",
+                    "original_relationship_name": "Cites",
+                    "scholix_relationship": "References"
                 },
-                "type": {
-                    "name": "software"
-                }
-            },
-            "source": {
-                "identifier": {
-                    "id": "2016ApJ...818..156C",
-                    "id_schema": "bibcode",
-                    "Id_url": "http://adsabs.harvard.edu/abs/"
-                }
-            },
-            "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
-        }]
+                "target": {
+                    "identifier": {
+                        "id": "10.5281/zenodo.11020",
+                        "id_schema": "DOI",
+                        "id_url": "https://doi.org"
+                    },
+                    "type": {
+                        "name": "software"
+                    }
+                },
+                "source": {
+                    "identifier": {
+                        "id": "2016ApJ...818..156C",
+                        "id_schema": "bibcode",
+                        "id_url": "http://adsabs.harvard.edu/abs/"
+                    }
+                },
+                "license_url": "https://creativecommons.org/"
+                               "publicdomain/zero/1.0/"
+            }
+        ]
     }
 
     return obj
