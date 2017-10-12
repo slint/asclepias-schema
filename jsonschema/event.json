@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://asclepias.org/schema/event-v1.0.json",
+    "id": "https://github.com/asclepias/event-model/blob/master/jsonschema/event.json",
     "title": "Event message schema.",
     "description": "Schema of the event message.",
     "additionalProperties": false,
@@ -26,7 +26,7 @@
             "items": {
                 "anyOf": [
                     {
-                        "$ref": "https://asclepias.org/schema/relation-v1.0.json"
+                        "$ref": "https://github.com/asclepias/event-model/blob/master/jsonschema/relation.json"
                     }
                 ]
             }
@@ -38,6 +38,10 @@
         "time": {
             "type": "string",
             "description": "Time when the payload information was created."
+        },
+        "description": {
+            "type": "string",
+            "description": "Free-text description of the event."
         }
     },
     "required": [

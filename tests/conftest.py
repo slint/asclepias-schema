@@ -51,33 +51,112 @@ def zenodo_relation_events_dir():
 @pytest.fixture
 def ads_relation_payloads():
     # Example from ADS
-    obj = {
-        "relationship_type": {
-            "original_relationship_schema": "DataCite",
-            "original_relationship_name": "Cites",
-            "scholix_relationship": "References"
-        },
-        "target": {
-            "Identifier": {
-                "id": "10.5281/zenodo.11020",
-                "id_schema": "DOI",
-                "id_url": "https://doi.org"
+    data = [
+        {
+            "relationship_type": {
+                "original_relationship_schema": "DataCite",
+                "original_relationship_name": "Cites",
+                "scholix_relationship": "References"
             },
-            "type": {
-                "name": "software"
-            }
+            "target": {
+                "Identifier": {
+                    "id": "10.5281/zenodo.11020",
+                    "id_schema": "DOI",
+                    "id_url": "https://doi.org"
+                },
+                "type": {
+                    "name": "software"
+                }
+            },
+            "source": {
+                "identifier": {
+                    "id": "2016ApJ...818..156C",
+                    "id_schema": "bibcode",
+                    "id_url": "http://adsabs.harvard.edu/abs/"
+                }
+            },
+            "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
         },
-        "source": {
-            "identifier": {
-                "id": "2016ApJ...818..156C",
-                "id_schema": "bibcode",
-                "id_url": "http://adsabs.harvard.edu/abs/"
-            }
-        },
-        "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
-    }
+    ]
 
-    return obj
+    return data
+
+
+@pytest.fixture()
+def ads_example_events():
+    # Two events that are described in ADS-mock-events.md
+    data = [
+        {
+          "time": "1441166640.359496",
+          "id": "d969a56d-e520-405d-a24f-497ac6923781",
+          "creator": "ADS",
+          "payload": [
+            {
+              "source": {
+                "identifier": {
+                  "id_url": "http://adsabs.harvard.edu/abs/",
+                  "id": "2016ApJ...818..156C",
+                  "id_schema": "bibcode"
+                }
+              },
+              "relationship_type": {
+                "scholix_relationship": "references",
+                "original_relationship_name": "Cites",
+                "original_relationship_schema": "DataCite"
+              },
+              "target": {
+                "type": {
+                  "name": "software"
+                },
+                "identifier": {
+                  "id_url": "https://doi.org",
+                  "id": "10.5281/zenodo.11020",
+                  "id_schema": "DOI"
+                }
+              },
+              "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+            }
+          ],
+          "source": "ADS.Discovery",
+          "description": "ADS citation events",
+          "event_type": "relation_created"
+        },
+        {
+          "time": "1441166640.359496",
+          "id": "d969a56d-e520-405d-a24f-497ac6923781",
+          "creator": "ADS",
+          "payload": [
+            {
+              "source": {
+                "identifier": {
+                  "id_url": "http://adsabs.harvard.edu/abs/",
+                  "id": "2016zen.soft123456X",
+                  "id_schema": "bibcode"
+                }
+              },
+              "relationship_type": {
+                "original_relationship_name": "IsIdenticalTo",
+                "original_relationship_schema": "DataCite"
+              },
+              "target": {
+                "type": {
+                  "name": "software"
+                },
+                "identifier": {
+                  "id_url": "https://doi.org",
+                  "id": "10.5281/zenodo.11020",
+                  "id_schema": "DOI"
+                }
+              },
+              "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+            }
+          ],
+          "source": "ADS.Discovery",
+          "description": "ADS citation events",
+          "event_type": "relation_created"
+        }
+    ]
+    return data
 
 
 @pytest.fixture
@@ -97,7 +176,7 @@ def minimal_relation_event():
                 "scholix_relationship": "References"
             },
             "target": {
-                "Identifier": {
+                "identifier": {
                     "id": "10.5281/zenodo.11020",
                     "id_schema": "DOI",
                     "Id_url": "https://doi.org"

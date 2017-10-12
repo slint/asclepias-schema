@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "id": "https://asclepias.org/schema/relation-v1.0.json",
+    "id": "https://github.com/asclepias/event-model/blob/master/jsonschema/relation.json",
     "title": "Object relation payload schema.",
     "description": "Schema of the payload, describing the relations between two objects.",
     "definitions": {

@@ -9,34 +9,36 @@ Little bit of background: the ADS reference resolving process stores data in a f
   "time": "1441166640.359496",
   "id": "d969a56d-e520-405d-a24f-497ac6923781",
   "creator": "ADS",
-  "payload": {
-    "source": {
-      "identifier": {
-        "id_url": "http://adsabs.harvard.edu/abs/",
-        "id": "2016ApJ...818..156C",
-        "id_schema": "bibcode"
-      }
-    },
-    "relationship_type": {
-      "scholix_relationship": "references",
-      "original_relationship_name": "Cites",
-      "original_relationship_schema": "DataCite"
-    },
-    "target": {
-      "type": {
-        "name": "software"
+  "payload": [
+    {
+      "source": {
+        "identifier": {
+          "id_url": "http://adsabs.harvard.edu/abs/",
+          "id": "2016ApJ...818..156C",
+          "id_schema": "bibcode"
+        }
       },
-      "identifie": {
-        "id_url": "https://doi.org",
-        "id": "10.5281/zenodo.11020",
-        "id_schema": "DOI"
-      }
-    },
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
-  },
+      "relationship_type": {
+        "scholix_relationship": "references",
+        "original_relationship_name": "Cites",
+        "original_relationship_schema": "DataCite"
+      },
+      "target": {
+        "type": {
+          "name": "software"
+        },
+        "identifier": {
+          "id_url": "https://doi.org",
+          "id": "10.5281/zenodo.11020",
+          "id_schema": "DOI"
+        }
+      },
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
   "source": "ADS.Discovery",
   "description": "ADS citation events",
-  "event": "relation_created"
+  "event_type": "relation_created"
 }
 ```
 
@@ -48,33 +50,35 @@ The metadata harvested for the Zenodo (software) record in the ADS back-office p
   "time": "1441166640.359496",
   "id": "d969a56d-e520-405d-a24f-497ac6923781",
   "creator": "ADS",
-  "payload": {
-    "source": {
-      "identifier": {
-        "id_url": "http://adsabs.harvard.edu/abs/",
-        "id": "2016zen.soft123456X",
-        "id_schema": "bibcode"
-      }
-    },
-    "relationship_type": {
-      "original_relationship_name": "IsIdenticalTo",
-      "original_relationship_schema": "DataCite"
-    },
-    "target": {
-      "type": {
-        "name": "software"
+  "payload": [
+    {
+      "source": {
+        "identifier": {
+          "id_url": "http://adsabs.harvard.edu/abs/",
+          "id": "2016zen.soft123456X",
+          "id_schema": "bibcode"
+        }
       },
-      "Identifier": {
-        "id_url": "https://doi.org",
-        "id": "10.5281/zenodo.11020",
-        "id_schema": "DOI"
-      }
-    },
-    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
-  },
+      "relationship_type": {
+        "original_relationship_name": "IsIdenticalTo",
+        "original_relationship_schema": "DataCite"
+      },
+      "target": {
+        "type": {
+          "name": "software"
+        },
+        "identifier": {
+          "id_url": "https://doi.org",
+          "id": "10.5281/zenodo.11020",
+          "id_schema": "DOI"
+        }
+      },
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
   "source": "ADS.Discovery",
   "description": "ADS citation events",
-  "event": "relation_created"
+  "event_type": "relation_created"
 }
 ```
 
