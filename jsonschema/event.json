@@ -9,7 +9,7 @@
         "event_type": {
             "type": "string",
             "description": "Type of the event. Controlled vocabulary: 'relation_created' or 'relation_deleted'",
-            "enum": ["relation_created", "relation_deleted"]
+            "enum": ["relation_created", "relation_deleted", "object_created", "object_deleted"]
 
         },
         "creator": {
@@ -27,6 +27,9 @@
                 "anyOf": [
                     {
                         "$ref": "relation.json"
+                    },
+                    {
+                        "$ref": "object.json"
                     }
                 ]
             }

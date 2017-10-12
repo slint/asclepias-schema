@@ -161,44 +161,37 @@ def ads_example_events():
     return data
 
 
-@pytest.fixture
-def minimal_relation_event():
-    """Minimal event."""
-    obj = {
-        "id": "d969a56d-e520-405d-a24f-497ac6923781",
-        "description": "ADS citation events",
-        "creator": "ADS",
-        "source": "ADS.Discovery",
-        "time": "1441166640.359496",
-        "event_type": "relation_created",
-        "payload": [
+#
+# Raw object events and payload fixtures
+#
+@pytest.fixture()
+def zenodo_object_events():
+    """Example object events from Zenodo."""
+    # Two events that are described in ADS-mock-events.md
+    data = [
+        {
+          "time": "1441166640.359496",
+          "id": "d969a56d-e520-405d-a24f-497ac6923781",
+          "creator": "Zenodo",
+          "payload": [
             {
-                "relationship_type": {
-                    "original_relationship_schema": "DataCite",
-                    "original_relationship_name": "Cites",
-                    "scholix_relationship": "References"
-                },
-                "target": {
-                    "identifier": {
-                        "id": "10.5281/zenodo.11020",
-                        "id_schema": "DOI",
-                        "id_url": "https://doi.org"
-                    },
-                    "type": {
-                        "name": "software"
-                    }
-                },
-                "source": {
-                    "identifier": {
-                        "id": "2016ApJ...818..156C",
-                        "id_schema": "bibcode",
-                        "id_url": "http://adsabs.harvard.edu/abs/"
-                    }
-                },
-                "license_url": "https://creativecommons.org/"
-                               "publicdomain/zero/1.0/"
+              "object_publication_date": "2014-06-24",
+              "object_provider": {
+                "name": "Zenodo"
+              },
+              "object": {
+                "identifier": {
+                  "id_url": "https://doi.org",
+                  "id": "10.5281/zenodo.11020",
+                  "id_schema": "DOI"
+                }
+              },
+              "license_url": "https://creativecommons.org/"
+                             "publicdomain/zero/1.0/"
             }
-        ]
-    }
-
-    return obj
+          ],
+          "source": "Zenodo.System",
+          "event_type": "object_created"
+        },
+    ]
+    return data

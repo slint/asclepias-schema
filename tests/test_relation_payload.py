@@ -2,7 +2,7 @@
 from jsonschema import validate
 
 
-def test_simple_relation_payload(ads_relation_payloads, relation_schema):
+def test_ads_relation_payloads(ads_relation_payloads, relation_schema):
     """Test simple relation payload JSONSchema validation."""
     # Will rase in case of schema validation errors
     for data in ads_relation_payloads:
