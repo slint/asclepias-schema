@@ -3,101 +3,6 @@
     "id": "https://raw.githubusercontent.com/asclepias/event-model/master/jsonschema/relation.json",
     "title": "Object relation payload schema.",
     "description": "Schema of the payload, describing the relations between two objects.",
-    "definitions": {
-        "identifier": {
-            "type": "object",
-            "additionalProperties": false,
-            "description": "General structure of the persistent identifiers.",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "description": "E.g.: 10.5281/zenodo.123"
-                },
-                "id_schema": {
-                    "type": "string",
-                    "description": "E.g.: DOI"
-                },
-                "id_url": {
-                    "type": "string",
-                    "description": "E.g.: http://doi.org"
-                }
-            },
-            "required": [
-                "id",
-                "id_schema"
-            ]
-        },
-        "object_type": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "sub_type": {
-                    "type": "string"
-                },
-                "sub_type_schema": {
-                    "type": "string"
-                }
-            }
-        },
-        "publisher": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "$ref": "#/definitions/identifier"
-                }
-            }
-        },
-        "provider": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "identifier": {
-                    "$ref": "#/definitions/identifier"
-                }
-            }
-        },
-        "relationship": {
-            "properties": {
-                "scholix_relationship": {
-                    "type": "string",
-                    "description": "Currently-supported Scholix relations.",
-                    "enum": ["IsReferencedBy", "References", "IsSupplementTo", "IsSupplementedBy", "IsRelatedTo"]
-                },
-                "original_relationship_name": {
-                    "type": "string",
-                    "description": "All other relationship names. Supporting all metadata types of DataCite Metadata Schema 4.1",
-                    "enum": ["IsCitedBy", "Cites", "IsSupplementTo", "IsSupplementedBy", "IsContinuedBy", "Continues", "HasMetadata", "IsMetadataFor", "IsNewVersionOf", "IsPreviousVersionOf", "IsPartOf", "HasPart", "IsReferencedBy", "References", "IsDocumentedBy", "Documents", "IsCompiledBy", "Compiles", "IsVariantFormOf", "IsOriginalFormOf", "IsIdenticalTo", "IsReviewedBy", "Reviews", "IsDerivedFrom", "IsSourceOf", "IsDescribedBy", "Describes", "HasVersion", "IsVersionOf", "IsRequiredBy", "Requires"]
-
-                },
-                "original_relationship_schema": {
-                    "type": "string",
-                    "description": "Schema of the relation type. Currently DataCite only.",
-                    "enum": ["DataCite"]
-                }
-            }
-        },
-        "object": {
-            "properties": {
-                "identifier": {
-                    "$ref": "#definitions/identifier"
-                },
-                "type": {
-                    "$ref": "#definitions/object_type"
-                },
-                "publisher": {
-                    "$ref": "#definitions/publisher"
-                },
-                "publication_date": {
-                    "type": "string",
-                    "description": "Object (PID) first publication date. Type dc:date."
-                }
-            }
-        }
-    },
     "type": "object",
     "properties": {
         "link_publication_date": {
@@ -109,21 +14,21 @@
                 "description": "Party that is providing the link."
             },
             "identifier": {
-                "$ref": "#definitions/identifier"
+                "$ref": "definitions.json#definitions/identifier"
             }
         },
         "relationship_type": {
-            "$ref": "#definitions/relationship"
+            "$ref": "definitions.json#definitions/relationship"
         },
         "license_url": {
             "type": "string",
             "description": "URL to a license of the link (recommended CC0)"
         },
         "source": {
-            "$ref": "#definitions/object"
+            "$ref": "definitions.json#definitions/object"
         },
         "target": {
-            "$ref": "#definitions/object"
+            "$ref": "definitions.json#definitions/object"
         }
     }
 }
