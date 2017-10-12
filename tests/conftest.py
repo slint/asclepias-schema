@@ -190,9 +190,7 @@ def zenodo_object_events():
                   "id": "10.5281/zenodo.11020",
                   "id_schema": "DOI"
                 }
-              },
-              "license_url": "https://creativecommons.org/"
-                             "publicdomain/zero/1.0/"
+              }
             }
           ],
           "source": "Zenodo.System",
