@@ -1,0 +1,106 @@
+{
+    "event_type": "object_updated",
+    "creator": "Zenodo",
+    "id": "fe99e719-9573-4ca7-bf33-482a127038a7",
+    "source": "Zenodo",
+    "time": "1507843360.21",
+    "payload": [
+        {
+            "metadata_schema_url": "https://zenodo.org/schemas/records/record-v1.0.0.json",
+            "object": {
+                "publisher": {
+                    "name": "Zenodo"
+                },
+                "identifier": {
+                    "id_schema": "DOI",
+                    "id_url": "https://doi.org",
+                    "id": "10.5072/zenodo.11"
+                },
+                "type": {
+                    "name": "literature",
+                    "sub_type_schema": "https://zenodo.org/schemas/records/record-v1.0.0.json#/resource_type/subtype",
+                    "sub_type": "publication-article"
+                },
+                "publication_date": "2017-10-12"
+            },
+            "object_publication_date": "2017-10-12",
+            "object_provider": {
+                "name": "Zenodo"
+            },
+            "metadata_schema": "Zenodo",
+            "metadata": {
+                "owners": [
+                    3
+                ],
+                "doi": "10.5072/zenodo.11",
+                "links": {
+                    "conceptbadge": "https://zenodo.org/badge/doi/10.5072/zenodo.10.svg",
+                    "doi": "https://doi.org/10.5072/zenodo.11",
+                    "badge": "https://zenodo.org/badge/doi/10.5072/zenodo.11.svg",
+                    "conceptdoi": "https://doi.org/10.5072/zenodo.10"
+                },
+                "conceptdoi": "10.5072/zenodo.10",
+                "created": null,
+                "updated": null,
+                "conceptrecid": "10",
+                "revision": null,
+                "id": 11,
+                "metadata": {
+                    "access_right_category": "success",
+                    "doi": "10.5072/zenodo.11",
+                    "description": "<p>Tes Record A</p>",
+                    "license": {
+                        "id": "cc-by-sa"
+                    },
+                    "title": "Record A N",
+                    "relations": {
+                        "version": [
+                            {
+                                "count": 1,
+                                "index": 0,
+                                "is_last": true,
+                                "last_child": {
+                                    "pid_type": "recid",
+                                    "pid_value": "11"
+                                },
+                                "parent": {
+                                    "pid_type": "recid",
+                                    "pid_value": "10"
+                                }
+                            }
+                        ]
+                    },
+                    "publication_date": "2017-10-12",
+                    "creators": [
+                        {
+                            "name": "Test user"
+                        }
+                    ],
+                    "access_right": "open",
+                    "resource_type": {
+                        "subtype": "article",
+                        "type": "publication",
+                        "title": "Journal article"
+                    },
+                    "related_identifiers": [
+                        {
+                            "scheme": "doi",
+                            "relation": "cites",
+                            "identifier": "10.5072/zenodo.53155"
+                        },
+                        {
+                            "scheme": "doi",
+                            "relation": "cites",
+                            "identifier": "10.5072/zenodo.56799"
+                        },
+                        {
+                            "scheme": "doi",
+                            "relation": "isPartOf",
+                            "identifier": "10.5072/zenodo.10"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
