@@ -78,8 +78,8 @@ The metadata harvested for the Zenodo (software) record in the ADS back-office p
 }
 ```
 
-*** Event: ADS discovers that a journal article cites a Zenodo (software) record (already in the ADS database)
+## Event: ADS discovers that a journal article cites a Zenodo (software) record (already in the ADS database)
 
-This will result in the emission of a `relation_added` event just like the one earlier.
+This will result in the emission of a `relation_added` event just like the one earlier. Since an `IsIdenticalTo` event has been transmitted, equating the Zenodo DOI with the ADS bibcode for that record, the broker will recognize this equivalency.
 
 ![Image of ADS events](https://github.com/asclepias/event-model/blob/master/ADS_events.png)
