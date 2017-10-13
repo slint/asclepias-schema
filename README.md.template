@@ -3,8 +3,8 @@ This repository contains the schemas for events, payloads and definitions.
 
 # Event, payload and definitions schemas
 * [`Event schema`](#reference-event-schema) (root object `event`)
-* [`Relation payload schema`](#reference-payload-relation-schema) (nested object under `event["payload"]`)
-* [`Object payload schema`](#reference-payload-object-schema) (nested object under `event["payload"]`)
+* [`Payload schema: Relation`](#reference-payload-relation-schema) (nested object under `event["payload"]`)
+* [`Payload schema: object`](#reference-payload-object-schema) (nested object under `event["payload"]`)
 * [`Payload definitions`](#reference-payload-definitions-schema) (Object definitions used in payloads)
 
 
@@ -57,7 +57,7 @@ Additional properties are allowed.
 <a name="reference-payload-definitions-schema"></a>
 ## Payload definitions
 
-Schemas of structured objects in ``definitions.json`` schema.
+Schemas of smaller structured objects used within other payload.
 
 **Available ``definitions``**
 

@@ -3,8 +3,8 @@ This repository contains the schemas for events, payloads and definitions.
 
 # Event, payload and definitions schemas
 * [`Event schema`](#reference-event-schema) (root object `event`)
-* [`Relation payload schema`](#reference-payload-relation-schema) (nested object under `event["payload"]`)
-* [`Object payload schema`](#reference-payload-object-schema) (nested object under `event["payload"]`)
+* [`Payload schema: Relation`](#reference-payload-relation-schema) (nested object under `event["payload"]`)
+* [`Payload schema: object`](#reference-payload-object-schema) (nested object under `event["payload"]`)
 * [`Payload definitions`](#reference-payload-definitions-schema) (Object definitions used in payloads)
 
 
@@ -70,18 +70,9 @@ Additional properties are allowed.
 <a name="reference-payload-definitions-schema"></a>
 ## Payload definitions
 
-Schemas of structured objects in ``definitions.json`` schema.
+Schemas of smaller structured objects used within other payload.
 
 **Available ``definitions``**
-
-### Definition: ``relationship``
-<a name="definition-relationship"></a>
-
-|   |Type|Description|Required|
-|---|----|-----------|--------|
-| **scholix_relationship** | string | Currently-supported Scholix relations. | No |
-| **original_relationship_name** | string | All other relationship names. Supporting all metadata types of DataCite Metadata Schema 4.1 | No |
-| **original_relationship_schema** | string | Schema of the relation type. Currently DataCite only. | No |
 
 ### Definition: ``organization``
 <a name="definition-organization"></a>
@@ -91,15 +82,14 @@ Schemas of structured objects in ``definitions.json`` schema.
 | **name** | string | Name of the organization, which can be an event payload information provider, object publisher etc. | No |
 | **identifier** | object ([`identifier`](#definition-identifier)) |  | No |
 
-### Definition: ``object``
-<a name="definition-object"></a>
+### Definition: ``relationship``
+<a name="definition-relationship"></a>
 
 |   |Type|Description|Required|
 |---|----|-----------|--------|
-| **identifier** | object ([`identifier`](#definition-identifier)) |  | No |
-| **type** | object ([`object_type`](#definition-object_type)) |  | No |
-| **publisher** | object ([`organization`](#definition-organization)) |  | No |
-| **publication_date** | string | Object (PID) first publication date. Type dc:date. | No |
+| **scholix_relationship** | string | Currently-supported Scholix relations. | No |
+| **original_relationship_name** | string | All other relationship names. Supporting all metadata types of DataCite Metadata Schema 4.1 | No |
+| **original_relationship_schema** | string | Schema of the relation type. Currently DataCite only. | No |
 
 ### Definition: ``identifier``
 <a name="definition-identifier"></a>
@@ -118,5 +108,15 @@ Schemas of structured objects in ``definitions.json`` schema.
 | **name** | string |  | No |
 | **sub_type** | string |  | No |
 | **sub_type_schema** | string |  | No |
+
+### Definition: ``object``
+<a name="definition-object"></a>
+
+|   |Type|Description|Required|
+|---|----|-----------|--------|
+| **identifier** | object ([`identifier`](#definition-identifier)) |  | No |
+| **type** | object ([`object_type`](#definition-object_type)) |  | No |
+| **publisher** | object ([`organization`](#definition-organization)) |  | No |
+| **publication_date** | string | Object (PID) first publication date. Type dc:date. | No |
 
 
