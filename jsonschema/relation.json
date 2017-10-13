@@ -11,20 +11,24 @@
             "description": "Date of the relation publishing."
         },
         "relation_provider": {
-            "$ref": "definitions.json#definitions/organization"
+            "$ref": "definitions.json#definitions/organization",
+            "description": "Provider of the relation."
         },
         "relationship_type": {
-            "$ref": "definitions.json#definitions/relationship"
+            "$ref": "definitions.json#definitions/relationship",
+            "description": "Type of the relation."
         },
         "license_url": {
             "type": "string",
             "description": "URL to a license of the relation (recommended CC0)"
         },
         "source": {
-            "$ref": "definitions.json#definitions/object"
+            "$ref": "definitions.json#definitions/object",
+            "description": "First object in the relation."
         },
         "target": {
-            "$ref": "definitions.json#definitions/object"
+            "$ref": "definitions.json#definitions/object",
+            "description": "Second object in the relation."
         }
     },
     "required": [

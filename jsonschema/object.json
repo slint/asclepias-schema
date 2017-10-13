@@ -11,10 +11,12 @@
             "description": "Date when the information on this object was first published."
         },
         "object_provider": {
-            "$ref": "definitions.json#definitions/organization"
+            "$ref": "definitions.json#definitions/organization",
+            "description": "Entity providing the object event information."
         },
         "object": {
-            "$ref": "definitions.json#definitions/object"
+            "$ref": "definitions.json#definitions/object",
+            "description": "Information on the object ."
         },
         "metadata": {
             "type": "object",
