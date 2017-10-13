@@ -16,7 +16,7 @@ Schema of the event message.
 |   |Type|Description|Required|
 |---|----|-----------|--------|
 {% for k, v in event.items() -%}
-|**{{ k }}**|{{ v['type'] }}|{{ v['description'] }}|{{ v['required'] }}|
+| **{{ k }}** | {{ v['type'] }} | {{ v['description'] }} | {{ v['required'] }} |
 {% endfor %}
 
 Additional properties are allowed.
@@ -31,7 +31,7 @@ Schema of the relation payload.
 |   |Type|Description|Required|
 |---|----|-----------|--------|
 {% for k, v in relation.items() -%}
-|**{{k}}**|{{v['type']}}|{{v['description']}}|{{v['required']}}|
+| **{{k}}** | {{v['type']}} | {{v['description']}} | {{v['required']}} |
 {% endfor %}
 
 Additional properties are allowed.
@@ -47,7 +47,7 @@ Schema of the object payload.
 |---|----|-----------|--------|
 
 {% for k, v in object.items() -%}
-|**{{k}}**|{{v['type']}}|{{v['description']}}|{{v['required']}}|
+| **{{k}}** | {{v['type']}} | {{v['description']}} | {{v['required']}} |
 {% endfor %}
 
 Additional properties are allowed.
