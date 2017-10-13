@@ -15,13 +15,13 @@ Schema of the event message.
 
 |   |Type|Description|Required|
 |---|----|-----------|--------|
-|**id**|string|Globally unique identifier of the event (UUID version 4 as specified in RFC 4122).|Yes|
-|**description**|string|Free-text description of the event.|No|
-|**creator**|string|Name of the part which emmited this event.|Yes|
-|**payload**|array|Payload information specific to the event_type. An array, containing one or more payloads of the structure matching with the event_type.|Yes|
-|**source**|string|Name of the source, algorithm or procedure, which created this event.|Yes|
-|**time**|string|Time when the payload information was created.|Yes|
 |**event_type**|string|Type of the event. Controlled vocabulary: 'relation_created' or 'relation_deleted'|Yes|
+|**creator**|string|Name of the part which emmited this event.|Yes|
+|**source**|string|Name of the source, algorithm or procedure, which created this event.|Yes|
+|**payload**|array|Payload information specific to the event_type. An array, containing one or more payloads of the structure matching with the event_type.|Yes|
+|**id**|string|Globally unique identifier of the event (UUID version 4 as specified in RFC 4122).|Yes|
+|**time**|string|Time when the payload information was created.|Yes|
+|**description**|string|Free-text description of the event.|No|
 
 
 Additional properties are allowed.
@@ -36,11 +36,11 @@ Schema of the relation payload.
 |   |Type|Description|Required|
 |---|----|-----------|--------|
 |**relation_publication_date**|string|Date of the relation publishing.|No|
-|**target**||Second object in the relation.|Yes|
-|**source**||First object in the relation.|Yes|
-|**license_url**|string|URL to a license of the relation (recommended CC0)|Yes|
-|**relationship_type**||Type of the relation.|No|
 |**relation_provider**||Provider of the relation.|No|
+|**relationship_type**||Type of the relation.|No|
+|**license_url**|string|URL to a license of the relation (recommended CC0)|Yes|
+|**source**||First object in the relation.|Yes|
+|**target**||Second object in the relation.|Yes|
 
 
 Additional properties are allowed.
@@ -55,12 +55,12 @@ Schema of the object payload.
 |   |Type|Description|Required|
 |---|----|-----------|--------|
 
-|**metadata**|object|Metadata that is associated with this object|No|
-|**object**||Information on the object .|Yes|
-|**metadata_schema_url**|string|Example: https://zenodo.org/schemas/records/record-v1.0.0.json|No|
 |**object_publication_date**|string|Date when the information on this object was first published.|Yes|
 |**object_provider**||Entity providing the object event information.|Yes|
+|**object**||Information on the object .|Yes|
+|**metadata**|object|Metadata that is associated with this object|No|
 |**metadata_schema**|string|Example: DataCite, Zenodo|No|
+|**metadata_schema_url**|string|Example: https://zenodo.org/schemas/records/record-v1.0.0.json|No|
 
 
 Additional properties are allowed.

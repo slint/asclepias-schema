@@ -1,6 +1,7 @@
 import os
 import jinja2
 import json
+from collections import OrderedDict
 
 
 def render(tpl_path, context):
@@ -19,7 +20,7 @@ schemas = [
 context = {}
 for key, filename in schemas:
     with open('jsonschema/' + filename, 'r') as fp:
-        data = json.load(fp)
+        data = json.load(fp, object_pairs_hook=OrderedDict)
         required = data['required']
         properties = data['properties']
         for k, v in properties.items():
