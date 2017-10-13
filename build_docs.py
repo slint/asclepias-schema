@@ -38,4 +38,4 @@ with open('jsonschema/definitions.json', 'r') as fp:
             properties[k]['required'] = 'Yes' if k in required else 'No'
         context['definitions'][def_k] = properties
 
-print(render('./event.md.tmp', context))
+print(render('./README.md.template', context))

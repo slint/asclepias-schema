@@ -1,7 +1,7 @@
 # NOTE:
-# event.md is a compiled file, do not modif it directly.
-# Instead, apply the changes on event.md.tmp and run:
-# python build_docs.py > event.md
+# README.md is a compiled file, do not modif it directly.
+# Instead, apply the changes on README.md.template and run:
+# python build_docs.py > README.md
 
 # Schemas
 * [`Event schema`](#reference-event-schema) (root object `event`)
