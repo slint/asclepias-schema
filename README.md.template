@@ -57,12 +57,13 @@ Additional properties are allowed.
 <a name="reference-payload-definitions-schema"></a>
 ## Payload definitions
 
-Schema of the object payload.
+Schemas of structured objects in ``definitions.json`` schema.
 
 **Available ``definitions``**
 
 {% for def_k, def_v in definitions.items() -%}
-Definition: ``{{def_k}}``
+### Definition: ``{{def_k}}``
+<a name="definition-{{def_k}}"></a>
 
 |   |Type|Description|Required|
 |---|----|-----------|--------|

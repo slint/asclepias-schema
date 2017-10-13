@@ -25,6 +25,8 @@ for key, filename in schemas:
         properties = data['properties']
         for k, v in properties.items():
             properties[k]['required'] = 'Yes' if k in required else 'No'
+            if '$ref' in v:
+                properties[k]['type'] = 'object ([`{0}`](#definition-{0}))'.format(v['$ref'].split('definitions/')[1])
         context[key] = properties
 
 with open('jsonschema/definitions.json', 'r') as fp:
@@ -36,6 +38,8 @@ with open('jsonschema/definitions.json', 'r') as fp:
         properties = def_v['properties']
         for k, v in properties.items():
             properties[k]['required'] = 'Yes' if k in required else 'No'
+            if '$ref' in v:
+                properties[k]['type'] = 'object ([`{0}`](#definition-{0}))'.format(v['$ref'].split('definitions/')[1])
         context['definitions'][def_k] = properties
 
 print(render('./README.md.template', context))
