@@ -45,7 +45,6 @@ Schema of the object payload.
 
 |   |Type|Description|Required|
 |---|----|-----------|--------|
-
 {% for k, v in object.items() -%}
 | **{{k}}** | {{v['type']}} | {{v['description']}} | {{v['required']}} |
 {% endfor %}

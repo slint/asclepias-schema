@@ -54,7 +54,6 @@ Schema of the object payload.
 
 |   |Type|Description|Required|
 |---|----|-----------|--------|
-
 | **object_publication_date** | string | Date when the information on this object was first published. | Yes |
 | **object_provider** |  | Entity providing the object event information. | Yes |
 | **object** |  | Information on the object . | Yes |
