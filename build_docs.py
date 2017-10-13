@@ -27,4 +27,15 @@ for key, filename in schemas:
             properties[k]['required'] = 'Yes' if k in required else 'No'
         context[key] = properties
 
+with open('jsonschema/definitions.json', 'r') as fp:
+    data = json.load(fp, object_pairs_hook=OrderedDict)
+    definitions = data['definitions']
+    context['definitions'] = {}
+    for def_k, def_v in definitions.items():
+        required = def_v.get('required', [])
+        properties = def_v['properties']
+        for k, v in properties.items():
+            properties[k]['required'] = 'Yes' if k in required else 'No'
+        context['definitions'][def_k] = properties
+
 print(render('./event.md.tmp', context))

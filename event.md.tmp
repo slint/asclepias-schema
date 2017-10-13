@@ -63,10 +63,13 @@ Schema of the object payload.
 
 **Available ``definitions``**
 
+{% for def_k, def_v in definitions.items() -%}
+Definition: ``{{def_k}}``
+
 |   |Type|Description|Required|
 |---|----|-----------|--------|
-|**identifier**|`object`|Identifier of an object or organization.||
-|**object_type**|`object`|Object type.||
-|**relationship**|`object`|Relationship type.||
-|**object**|`object`|Object.||
-|**organization**|`string`|Organization.||
+{% for k, v in def_v.items() -%}
+
+| **{{k}}** | {{v['type']}} | {{v['description']}} | {{v['required']}} |
+{% endfor %}
+{% endfor %}

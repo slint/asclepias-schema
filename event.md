@@ -1,3 +1,8 @@
+# NOTE:
+# event.md is a compiled file, do not modif it directly.
+# Instead, apply the changes on event.md.tmp and run:
+# python build_docs.py > event.md
+
 # Schemas
 * [`Event schema`](#reference-event-schema) (root object `event`)
 * [`Relation payload schema`](#reference-payload-relation-schema) (nested object under `event["payload"]`)
@@ -71,10 +76,44 @@ Schema of the object payload.
 
 **Available ``definitions``**
 
+Definition: ``identifier``
+
 |   |Type|Description|Required|
 |---|----|-----------|--------|
-|**identifier**|`object`|Identifier of an object or organization.||
-|**object_type**|`object`|Object type.||
-|**relationship**|`object`|Relationship type.||
-|**object**|`object`|Object.||
-|**organization**|`string`|Organization.||
+| **id** | string | E.g.: 10.5281/zenodo.123 | Yes |
+| **id_schema** | string | E.g.: DOI | Yes |
+| **id_url** | string | E.g.: http://doi.org | No |
+
+Definition: ``object_type``
+
+|   |Type|Description|Required|
+|---|----|-----------|--------|
+| **name** | string |  | No |
+| **sub_type** | string |  | No |
+| **sub_type_schema** | string |  | No |
+
+Definition: ``relationship``
+
+|   |Type|Description|Required|
+|---|----|-----------|--------|
+| **scholix_relationship** | string | Currently-supported Scholix relations. | No |
+| **original_relationship_name** | string | All other relationship names. Supporting all metadata types of DataCite Metadata Schema 4.1 | No |
+| **original_relationship_schema** | string | Schema of the relation type. Currently DataCite only. | No |
+
+Definition: ``organization``
+
+|   |Type|Description|Required|
+|---|----|-----------|--------|
+| **name** | string | Name of the organization, which can be an event payload information provider, object publisher etc. | No |
+| **identifier** |  |  | No |
+
+Definition: ``object``
+
+|   |Type|Description|Required|
+|---|----|-----------|--------|
+| **identifier** |  |  | No |
+| **type** |  |  | No |
+| **publisher** |  |  | No |
+| **publication_date** | string | Object (PID) first publication date. Type dc:date. | No |
+
+
