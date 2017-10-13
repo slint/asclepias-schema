@@ -86,4 +86,8 @@ The metadata harvested for the Zenodo (software) record in the ADS back-office p
 
 This will result in the emission of a `relation_added` event just like the one earlier. Since an `IsIdenticalTo` event has been transmitted, equating the Zenodo DOI with the ADS bibcode for that record, the broker will recognize this equivalency.
 
+## Event: A bibcode changes in the ADS
+
+Currently not supported as event. 
+
 ![Image of ADS events](https://github.com/asclepias/event-model/blob/master/ADS_events.png)
