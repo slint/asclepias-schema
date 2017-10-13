@@ -1,9 +1,7 @@
-# NOTE:
-# README.md is a compiled file, do not modif it directly.
-# Instead, apply the changes on README.md.template and run:
-# python build_docs.py > README.md
+This repository contains the schemas for events, payloads and definitions.
+**NOTE:** Do not modify this README.md file directly, it's a compiled file. Please modify the README.md.template and execute ``python build_docs.py > README.md``.
 
-# Schemas
+# Event, payload and definitions schemas
 * [`Event schema`](#reference-event-schema) (root object `event`)
 * [`Relation payload schema`](#reference-payload-relation-schema) (nested object under `event["payload"]`)
 * [`Object payload schema`](#reference-payload-object-schema) (nested object under `event["payload"]`)
@@ -76,6 +74,14 @@ Schema of the object payload.
 
 **Available ``definitions``**
 
+Definition: ``object_type``
+
+|   |Type|Description|Required|
+|---|----|-----------|--------|
+| **name** | string |  | No |
+| **sub_type** | string |  | No |
+| **sub_type_schema** | string |  | No |
+
 Definition: ``object``
 
 |   |Type|Description|Required|
@@ -84,13 +90,6 @@ Definition: ``object``
 | **type** |  |  | No |
 | **publisher** |  |  | No |
 | **publication_date** | string | Object (PID) first publication date. Type dc:date. | No |
-
-Definition: ``organization``
-
-|   |Type|Description|Required|
-|---|----|-----------|--------|
-| **name** | string | Name of the organization, which can be an event payload information provider, object publisher etc. | No |
-| **identifier** |  |  | No |
 
 Definition: ``relationship``
 
@@ -108,12 +107,11 @@ Definition: ``identifier``
 | **id_schema** | string | E.g.: DOI | Yes |
 | **id_url** | string | E.g.: http://doi.org | No |
 
-Definition: ``object_type``
+Definition: ``organization``
 
 |   |Type|Description|Required|
 |---|----|-----------|--------|
-| **name** | string |  | No |
-| **sub_type** | string |  | No |
-| **sub_type_schema** | string |  | No |
+| **name** | string | Name of the organization, which can be an event payload information provider, object publisher etc. | No |
+| **identifier** |  |  | No |
 
 
