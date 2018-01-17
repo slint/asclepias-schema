@@ -14,7 +14,7 @@
         },
         "creator": {
             "type": "string",
-            "description": "Name of the part which emmited this event."
+            "description": "Name of the party, which emmited this event."
         },
         "source": {
             "type": "string",
@@ -26,7 +26,7 @@
             "items": {
                 "oneOf": [
                     {
-                        "$ref": "relation.json"
+                        "$ref": "scholix_v3_software.json"
                     },
                     {
                         "$ref": "object.json"
